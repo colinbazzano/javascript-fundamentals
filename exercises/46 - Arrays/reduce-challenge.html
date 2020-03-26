@@ -1,20 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Reduce!</title>
+    <link rel="stylesheet" href="../../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Reduce!</title>
-  <link rel="stylesheet" href="../../base.css">
-</head>
+  <body>
+    <script>
+      // Grab all the text from a web page
+      // Count how many times each letter and number occurs
+      const text = `Skip to content
+      Search or jump to…
 
-<body>
-  <script>
-    // Grab all the text from a web page
-    // Count how many times each letter and number occurs
+      Pull requests
+      Issues
+      Marketplace
+      Explore
 
+      @colinbazzano
+      Repositories
+      Find a repository…
+      Lambda-School-Labs
+      /
+      trashpanda-fe
+      chef-portfolio-bw
+      /
+      frontend
+      Lambda-School-Labs
+      /
+      trashpanda-be
+      Build-Spotify-flow
+      /
+      Back-end
+      colinbazzano
+      /
+      create-react-app-functions
+      colinbazzano
+      /
+      Sprint-Challenge-Authentication
+      colinbazzano
+      /
+      node-server-testing-challenge
+      Your teams
+      Find a team…
+      Lambda-School-Labs/labs-20-trashpanda
+      Dashboard
 
-  </script>
-</body>
+      You’ve been added to the Lambda-School-Labs organization!
+      Here are some quick tips for a first-time organization member.
 
+      Use the switch context button in the upper left corner of this page to switch between your personal context (colinbazzano) and organizations you are a member of.
+      After you switch contexts you’ll see an organization-focused dashboard that lists out organization repositories and activities.
+      Recent activity
+      Feature: Write Test for LocationCard Molecule feature
+      @colinbazzano@CJLucido
+      Lambda-School-Labs/trashpanda-fe · You were assigned 9 days ago
+      All activity
+      @prietop97
+      prietop97 started following onewkirk and 3 other users yesterday
+      onewkirk
+      onewkirk
+      6 repositories 1 follower
+
+      @prietop97
+      prietop97 started following JessBonanno 2 days ago
+      JessBonanno
+      JessBonanno
+      17 repositories 11 followers
+
+      @addison-hill
+      addison-hill started following cacheUp 2 days ago
+      cacheUp
+      cacheUp
+      125 repositories 14 followers
+
+      @occludedarp
+      occludedarp forked occludedarp/gasoline-server from LambdaSchool/gasoline-server 2 days ago
+      LambdaSchool/gasoline-server
+       JavaScript 1 Updated Dec 17
+
+      @occludedarp
+      occludedarp forked occludedarp/React-Testing-TV-Show from LambdaSchool/React-Testing-TV-Show 3 days ago
+      LambdaSchool/React-Testing-TV-Show
+       JavaScript Updated Feb 24
+
+      @addison-hill
+      addison-hill started following Callisto1981 and javish88 3 days ago
+      Callisto1981
+      Callisto1981
+      38 repositories 15 followers
+
+      @CJLucido
+      CJLucido started following you and 2 other users 3 days ago
+      mark-halls
+      Mark Halls mark-halls
+      92 repositories 7 followers
+
+      @jambis
+      jambis forked jambis/Data-Structures from LambdaSchool/Data-Structures 5 days ago
+      LambdaSchool/Data-Structures
+       Python 24 Updated Feb 25
+
+      @dswhitely1
+      dswhitely1 forked dswhitely1/prismatopia from Lambda-School-Labs/prismatopia 5 days ago
+      Lambda-School-Labs/prismatopia
+      A backend API stack combining a bunch of trendy components (circa 2020): Apollo Server, Prisma, Oauth, JWT, Postgres, Docker, Typescript and more!
+
+       Makefile 7 Updated Feb 11
+
+      @dswhitely1
+      dswhitely1 forked dswhitely1/Intro-Python-I from LambdaSchool/Intro-Python-I 5 days ago
+      LambdaSchool/Intro-Python-I
+      Introduction to Python basics
+
+       Python 38 Updated Feb 11
+
+      @occludedarp
+      occludedarp created a repository occludedarp/SprintChallenge-StateManagement-Smurfs-Flex 6 days ago
+      occludedarp/SprintChallenge-StateManagement-Smurfs-Flex
+      Updated Feb 21
+
+      @jambis
+      jambis forked jambis/Sprint-Challenge--Algorithms from LambdaSchool/Sprint-Challenge--Algorithms 6 days ago
+      LambdaSchool/Sprint-Challenge--Algorithms
+       Python 4 Updated Nov 19
+
+      @jailang
+      jailang created a repository jailang/git-examples 7 days ago
+      jailang/git-examples
+      stand up practice
+
+      Updated Feb 20
+
+      @mdlevick
+      mdlevick forked mdlevick/React-Redux-App from LambdaSchool/React-Redux-App 7 days ago
+      @CJLucido
+      CJLucido started following thomasboyt 8 days ago
+      thomasboyt
+      Thomas Boyt thomasboyt
+      once ate an entire bag of gummy bears (haribo, ofc) in one sitting
+      257 repositories 179 followers
+
+      @occludedarp
+      occludedarp created a repository occludedarp/React-Redux-App-Flex 8 days ago
+      occludedarp/React-Redux-App-Flex
+      Updated Feb 19
+
+      @jambis
+      jambis forked jambis/Algorithms from LambdaSchool/Algorithms 9 days ago
+      LambdaSchool/Algorithms
+      An introduction to algorithmic problem-solving and algorithmic paradigms.
+
+       Python 22 Updated Feb 20
+
+      @occludedarp
+      occludedarp created 2 repositories 9 days ago
+      occludedarp/Car-Sales-Flex
+      Updated Feb 18
+
+      @prietop97
+      prietop97 created a repository prietop97/lambda-daily-projects 10 days ago
+      prietop97/lambda-daily-projects
+      Updated Feb 21
+
+      @occludedarp
+      occludedarp created a repository occludedarp/Reducer-Todo-Flex 10 days ago
+      occludedarp/Reducer-Todo-Flex
+      Updated Feb 17
+
+      @dswhitely1
+      dswhitely1 created a repository dswhitely1/github-reporter-server 10 days ago
+      dswhitely1/github-reporter-server
+      Updated Feb 17
+
+      @CJLucido
+      CJLucido started following AlanBayWalker 11 days ago
+      AlanBayWalker
+      Alan Ayala AlanBayWalker
+      Hey there! My name is Alan and I am a front-end developer working in the Houston, Texas area.
+      54 repositories 362 followers
+
+      @dswhitely1
+      dswhitely1 created a repository innovated-lambda-tools/lambda-dashboard 13 days ago
+      innovated-lambda-tools/lambda-dashboard
+      Updated Feb 15
+
+      @dswhitely1
+      dswhitely1 created 8 repositories 13 days ago
+      Lambda-School-Labs/job-book-fe
+      Updated Feb 14
+
+      @jambis
+      jambis forked jambis/Sprint-Challenge--Intro-Python from LambdaSchool/Sprint-Challenge--Intro-Python 13 days ago
+      LambdaSchool/Sprint-Challenge--Intro-Python
+      Intro to Python Sprint Challenge
+
+       Python 6 Updated Feb 21
+
+      @occludedarp
+      occludedarp created a repository occludedarp/SprintChallenge-AdvancedReact-Flex 13 days ago
+      occludedarp/SprintChallenge-AdvancedReact-Flex
+      Updated Feb 17
+
+      @Callisto1981
+      Callisto1981 started following you 13 days ago
+      Callisto1981
+      Callisto1981
+      40 repositories 18 followers
+
+      @jambis
+      jambis forked jambis/Sorting from LambdaSchool/Sorting 14 days ago
+      LambdaSchool/Sorting
+       Python 8 Updated Jan 20
+
+      @occludedarp
+      occludedarp created a repository occludedarp/ReactTesting-ContactForm-Flex 14 days ago
+      occludedarp/ReactTesting-ContactForm-Flex
+      Updated Feb 13
+
+      @hayesdev
+      hayesdev forked hayesdev/node-api1-guided from jsonmaur/node-api1-guided 15 days ago
+      jsonmaur/node-api1-guided
+      [Lambda School] Guided Project for Node API 1 Module
+
+       JavaScript Updated Feb 11
+
+      More
+       ProTip! The feed shows you events from people you follow and repositories you watch.
+      Subscribe to your news feed
+      © 2020 GitHub, Inc.
+      Blog
+      About
+      Shop
+      Contact GitHub
+      Pricing
+      API
+      Training
+      Status
+      Security
+      Terms
+      Privacy
+      Help
+      Git Merge 2020
+      50% off Git Merge tickets
+      We're celebrating 15 years of Git on March 4 in Los Angeles. Take half off the cost of Git Merge tickets with code GITBIRTHDAY.
+      Sponsors Mona
+      GitHub Sponsors is out of beta
+      We're now generally available in 30 countries, with more coming soon.
+      advanced security
+      Securing software together
+      Introducing new ways to identify and prevent security vulnerabilities across your code base.
+      Explore repositories
+      Lambda-School-Labs/Workout-Builder-be
+       JavaScript  1
+      Lambda-School-Labs/tagger-fe
+      internal
+
+       JavaScript  1
+      public-apis/public-apis
+      A collective list of free APIs for use in software and web development.
+
+       Python  71.2k
+      Explore more →
+      `;
+
+      function isValidChar(char) {
+        return char.match(/[a-z0-9]/i);
+      }
+      function lowercase(char) {
+        return char.toLowerCase();
+      }
+      function charCounter(counts, char) {
+        counts[char] ? (counts[char] = counts[char] + 1) : (counts[char] = 1);
+        return counts;
+      }
+
+      const result = text
+        .split("") //split each char into an item of an array
+        .filter(isValidChar)
+        .map(lowercase)
+        .reduce(charCounter, {});
+
+      console.log(result);
+
+      function sortByValue(a, b) {
+        return a[1] - b[1];
+      }
+
+      const sortedResult = Object.entries(result).sort(sortByValue);
+
+      console.table(sortedResult);
+    </script>
+  </body>
 </html>

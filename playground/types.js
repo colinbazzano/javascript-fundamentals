@@ -48,7 +48,6 @@ console.log(`Each kids gets ${eachKidGets}`);
 const price = 1034;
 */
 
-
 /*
 const person = {
   first: 'wes',

@@ -1,49 +1,49 @@
 function Slider(slider) {
   if (!(slider instanceof Element)) {
-    throw new Error('No slider passed in');
+    throw new Error("No slider passed in");
   }
   // create some variables for working iwth the slider
-  let prev;
-  let current;
-  let next;
+  // let this.prev;
+  // let this.current;
+  // let this.next;
   // select the elements needed for the slider
-  const slides = slider.querySelector('.slides');
-  const prevButton = slider.querySelector('.goToPrev');
-  const nextButton = slider.querySelector('.goToNext');
+  const slides = slider.querySelector(".slides");
+  const prevButton = slider.querySelector(".goToPrev");
+  const nextButton = slider.querySelector(".goToNext");
 
   function startSlider() {
-    current = slider.querySelector('.current') || slides.firstElementChild;
-    prev = current.previousElementSibling || slides.lastElementChild;
-    next = current.nextElementSibling || slides.firstElementChild;
-    console.log({ current, prev, next });
+    this.current = slider.querySelector(".current") || slides.firstElementChild;
+    this.prev = this.current.previousElementSibling || slides.lastElementChild;
+    this.next = this.current.nextElementSibling || slides.firstElementChild;
+    console.log({ current: this.current, prev: this.prev, next: this.next });
   }
 
   function applyClasses() {
-    current.classList.add('current');
-    prev.classList.add('prev');
-    next.classList.add('next');
+    this.current.classList.add("current");
+    this.prev.classList.add("prev");
+    this.next.classList.add("next");
   }
 
   function move(direction) {
     // first strip all the classes off the current slides
-    const classesToRemove = ['prev', 'current', 'next'];
-    prev.classList.remove(...classesToRemove);
-    current.classList.remove(...classesToRemove);
-    next.classList.remove(...classesToRemove);
-    if (direction === 'back') {
+    const classesToRemove = ["prev", "current", "next"];
+    this.prev.classList.remove(...classesToRemove);
+    this.current.classList.remove(...classesToRemove);
+    this.next.classList.remove(...classesToRemove);
+    if (direction === "back") {
       // make an new array of the new values, and destructure them over and into the prev, current and next variables
-      [prev, current, next] = [
+      [this.prev, this.current, this.next] = [
         // get the prev slide, if there is none, get the last slide from the entire slider for wrapping
-        prev.previousElementSibling || slides.lastElementChild,
-        prev,
-        current,
+        this.prev.previousElementSibling || slides.lastElementChild,
+        this.prev,
+        this.current
       ];
     } else {
-      [prev, current, next] = [
-        current,
-        next,
+      [this.prev, this.current, this.next] = [
+        this.current,
+        this.next,
         // get the next slide, or if it's at the end, loop around and grab the first slide
-        next.nextElementSibling || slides.firstElementChild,
+        this.next.nextElementSibling || slides.firstElementChild
       ];
     }
 
@@ -55,9 +55,9 @@ function Slider(slider) {
   applyClasses();
 
   // Event listeners
-  prevButton.addEventListener('click', () => move('back'));
-  nextButton.addEventListener('click', move);
+  prevButton.addEventListener("click", () => move("back"));
+  nextButton.addEventListener("click", move);
 }
 
-const mySlider = Slider(document.querySelector('.slider'));
-const dogSlider = Slider(document.querySelector('.dog-slider'));
+const mySlider = Slider(document.querySelector(".slider"));
+const dogSlider = Slider(document.querySelector(".dog-slider"));

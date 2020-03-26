@@ -1,4 +1,4 @@
-/* esline-disable */
+/* eslint-disable */
 let age;
 console.log(age);
 age = 10;
@@ -8,7 +8,7 @@ sayHi();
 
 /* How does this file do it? */
 function sayHi() {
-  console.log('hey!');
+  console.log("hey!");
   console.log(add(10, 2));
 }
 

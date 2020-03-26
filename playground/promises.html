@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Promises</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+
+  <body>
+    <script>
+      /* eslint-disable */
+      function makePizza(toppings = []) {
+        return new Promise(function(resolve, reject) {
+          // reject if people try to add pineapple
+          if (toppings.includes("pineapple")) {
+            reject("Seriously???");
+          }
+          const amountOfTimeToBake = 500 + toppings.length * 200;
+          // wait 1 second for the pizza
+          setTimeout(function() {
+            resolve(
+              `Here is your pizza with the toppings ${toppings.join(" ")}`
+            );
+          }, amountOfTimeToBake);
+          // when you are ready. you can resolve this promise
+          // if something went wrong, we can reject this promise
+        });
+      }
+
+      //   const pizza = makePizza(["pepperoni"]);
+      //   console.log(pizza);
+
+      //   pizzaPromise.then(function(pizza) {
+      //     console.log("ahh got it");
+      //     console.log(pizza);
+      //   });
+      //   makePizza(["pepperoni"]).then(function(pizza) {
+      //     console.log(pizza);
+      //     return makePizza(["ham", "cheese"]).then(function(pizzaAgain) {
+      //       console.log(pizzaAgain);
+      //     });
+      //   });
+
+      //   // run them concurrently
+      const pizzaPromise1 = makePizza(["ham", "egg", "bacon?", "cheese!"]);
+      const pizzaPromise2 = makePizza(["ham", "cheese!"]);
+      const pizzaPromise3 = makePizza(["cheese!"]);
+
+      const dinnerPromise = Promise.all([
+        pizzaPromise1,
+        pizzaPromise2,
+        pizzaPromise3
+      ]);
+
+      dinnerPromise
+        .then(function([pizza1, pizza2, pizza3]) {
+          console.log(pizza1, pizza2, pizza3);
+        })
+        .catch(handleError);
+
+      function handleError(err) {
+        console.log("yo sorry!!!!!!!!!");
+        console.log(err);
+      }
+
+      makePizza(["pineapple"])
+        .then(pizza => {
+          console.log(pizza);
+        })
+        .catch(err => {
+          console.log("oh no!!!");
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>
