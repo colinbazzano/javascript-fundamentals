@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>APIs</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+
+  <body>
+    <p class="user"></p>
+
+    <script>
+      /* eslint-disable */
+      const baseURL = "https://api.github.com";
+      const userEndpoint = `${baseURL}/users`;
+      const userEl = document.querySelector(".user");
+      async function displayUser(username) {
+        userEl.textContent = "loading...";
+        const response = await fetch(`${userEndpoint}/${username}`);
+        const data = await response.json();
+
+        console.log(data);
+        userEl.textContent = `${data.name} - ${data.bio}`;
+      }
+
+      function handleError(err) {
+        console.log("OH NO!");
+        console.log(err);
+        userEl.textContent = `something went wrong! ${err}`;
+      }
+
+      displayUser("colinbazzano");
+    </script>
+  </body>
+</html>
